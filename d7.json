@@ -1,0 +1,221 @@
+ {
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.com/schemas/validation-grid-audit.strict.schema.json",
+  "title": "Validation Grid - Schema (Strict)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "checksandmetrics",
+    "evidence",
+    "example_checks",
+    "final_recommendation",
+    "metadata",
+    "procedure",
+    "reasoningtrace",
+    "rulesandconstraints",
+    "trustscore",
+    "validation"
+  ],
+  "properties": {
+    "checksandmetrics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "biasrisklevel",
+        "consistency_score",
+        "provenance_score",
+        "reproducibility_score"
+      ],
+      "properties": {
+        "biasrisklevel": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["description", "interpretation", "levels", "value"],
+          "properties": {
+            "description": { "type": "string", "minLength": 1, "maxLength": 1000 },
+            "interpretation": { "type": "string", "minLength": 1, "maxLength": 1000 },
+            "levels": {
+              "type": "array",
+              "minItems": 1,
+              "items": { "type": "string", "enum": ["low", "medium", "high"] },
+              "uniqueItems": true
+            },
+            "value": { "type": "string", "enum": ["low", "medium", "high"] }
+          }
+        },
+        "consistency_score": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["description", "interpretation", "scale", "value"],
+          "properties": {
+            "description": { "type": "string", "minLength": 1, "maxLength": 1000 },
+            "interpretation": { "type": "string", "minLength": 1, "maxLength": 1000 },
+            "scale": { "type": "string", "enum": ["0-1"] },
+            "value": { "type": "number", "minimum": 0, "maximum": 1 }
+          }
+        },
+        "provenance_score": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["description", "interpretation", "scale", "value"],
+          "properties": {
+            "description": { "type": "string", "minLength": 1, "maxLength": 1000 },
+            "interpretation": { "type": "string", "minLength": 1, "maxLength": 1000 },
+            "scale": { "type": "string", "enum": ["0-1"] },
+            "value": { "type": "number", "minimum": 0, "maximum": 1 }
+          }
+        },
+        "reproducibility_score": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["description", "interpretation", "scale", "value"],
+          "properties": {
+            "description": { "type": "string", "minLength": 1, "maxLength": 1000 },
+            "interpretation": { "type": "string", "minLength": 1, "maxLength": 1000 },
+            "scale": { "type": "string", "enum": ["0-1"] },
+            "value": { "type": "number", "minimum": 0, "maximum": 1 }
+          }
+        }
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["collectedat", "id", "notes", "relevance", "source", "sourceuri", "type", "verifier"],
+        "properties": {
+          "collectedat": { "type": "string", "format": "date-time" },
+          "id": { "type": "string", "pattern": "^evidence-\\d{3,}$" },
+          "notes": { "type": "string", "minLength": 1, "maxLength": 2000 },
+          "relevance": { "type": "string", "enum": ["low", "medium", "high"] },
+          "source": { "type": "string", "minLength": 1, "maxLength": 256 },
+          "sourceuri": { "type": "string", "format": "uri", "pattern": "^https?:\\/\\/.+", "maxLength": 2000 },
+          "type": { "type": "string", "minLength": 1, "maxLength": 128 },
+          "verifier": { "type": "string", "minLength": 1, "maxLength": 128 }
+        }
+      }
+    },
+    "example_checks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["actions", "expected_outcome", "scenario"],
+        "properties": {
+          "actions": { "type": "string", "minLength": 1, "maxLength": 1000 },
+          "expected_outcome": { "type": "string", "minLength": 1, "maxLength": 1000 },
+          "scenario": { "type": "string", "minLength": 1, "maxLength": 256 }
+        }
+      }
+    },
+    "final_recommendation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["detailed", "short"],
+      "properties": {
+        "detailed": { "type": "string", "minLength": 1, "maxLength": 5000 },
+        "short": { "type": "string", "minLength": 1, "maxLength": 512 }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["author", "executivesummary", "language", "schemaversion", "title", "validatedat"],
+      "properties": {
+        "author": { "type": "string", "minLength": 1, "maxLength": 256 },
+        "executivesummary": { "type": "string", "minLength": 1, "maxLength": 2000 },
+        "language": { "type": "string", "pattern": "^[a-z]{2}(-[A-Z]{2})?$" },
+        "schemaversion": { "type": "string", "pattern": "^\\d+\\.\\d+(?:\\.\\d+)?$" },
+        "title": { "type": "string", "minLength": 1, "maxLength": 256 },
+        "validatedat": { "type": "string", "format": "date-time" }
+      }
+    },
+    "procedure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["assumptions", "goal", "limitationsandexpectations", "practical_tips", "recommendedtoolsandmethods", "safety_considerations", "stepbystep"],
+      "properties": {
+        "assumptions": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1, "maxLength": 1000 } },
+        "goal": { "type": "string", "minLength": 1, "maxLength": 1000 },
+        "limitationsandexpectations": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1, "maxLength": 1000 } },
+        "practical_tips": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1, "maxLength": 1000 } },
+        "recommendedtoolsandmethods": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1, "maxLength": 256 } },
+        "safety_considerations": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1, "maxLength": 1000 } },
+        "stepbystep": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["details", "step", "title"],
+            "properties": {
+              "details": { "type": "string", "minLength": 1, "maxLength": 2000 },
+              "step": { "type": "integer", "minimum": 1 },
+              "title": { "type": "string", "minLength": 1, "maxLength": 256 }
+            }
+          }
+        }
+      }
+    },
+    "reasoningtrace": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["description", "inputs", "operation", "output", "stepid", "timestamp"],
+        "properties": {
+          "description": { "type": "string", "minLength": 1, "maxLength": 2000 },
+          "inputs": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1, "maxLength": 1024 } },
+          "operation": { "type": "string", "minLength": 1, "maxLength": 512 },
+          "output": { "type": "string", "minLength": 1, "maxLength": 2000 },
+          "stepid": { "type": "string", "pattern": "^step-\\d{1,6}$" },
+          "timestamp": { "type": "string", "format": "date-time" }
+        }
+      }
+    },
+    "rulesandconstraints": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["donotguess", "explainstructuralreasoning", "explicitlimitationswheninsufficientdata", "nohallucination", "requireevidence", "traceabilityrequired"],
+      "properties": {
+        "donotguess": { "type": "boolean" },
+        "explainstructuralreasoning": { "type": "boolean" },
+        "explicitlimitationswheninsufficientdata": { "type": "boolean" },
+        "nohallucination": { "type": "boolean" },
+        "requireevidence": { "type": "boolean" },
+        "traceabilityrequired": { "type": "boolean" }
+      }
+    },
+    "trustscore": { "type": "number", "minimum": 0, "maximum": 1 },
+    "validation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["checksrun", "collectedat", "passed", "summary", "validator"],
+      "properties": {
+        "checksrun": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["checkname", "durationms", "notes", "status"],
+            "properties": {
+              "checkname": { "type": "string", "minLength": 1, "maxLength": 256 },
+              "durationms": { "type": "integer", "minimum": 0 },
+              "notes": { "type": "string", "minLength": 1, "maxLength": 2000 },
+              "status": { "type": "string", "enum": ["pass", "fail"] }
+            }
+          }
+        },
+        "collectedat": { "type": "string", "format": "date-time" },
+        "passed": { "type": "boolean" },
+        "summary": { "type": "string", "minLength": 1, "maxLength": 2000 },
+        "validator": { "type": "string", "minLength": 1, "maxLength": 256 }
+      }
+    }
+  }
+}

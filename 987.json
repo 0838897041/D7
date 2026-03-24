@@ -1,0 +1,288 @@
+
+
+{
+  "checksandmetrics": {
+    "biasrisklevel": {
+      "description": "การประเมินความเสี่ยงด้านอคติที่อาจมีต่อการประมวลผล input",
+      "interpretation": "low หมายถึงความเสี่ยงอคติต่ำ; medium หมายถึงต้องตรวจสอบเพิ่มเติม; high หมายถึงผลลัพธ์อาจบิดเบือน",
+      "levels": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "value": "low"
+    },
+    "consistency_score": {
+      "description": "คะแนนความสอดคล้องของข้อมูล input กับรูปแบบที่คาดหวัง (schema, params)",
+      "interpretation": "ค่าสูงใกล้ 1 แสดงว่า input สอดคล้องและครบถ้วนสำหรับการสร้างผลลัพธ์ตาม schema",
+      "scale": "0-1",
+      "value": 0.96
+    },
+    "provenance_score": {
+      "description": "คะแนนความน่าเชื่อถือของแหล่งที่มาของข้อมูลที่แนบหรืออ้างอิง",
+      "interpretation": "ค่าสูงใกล้ 1 แสดงว่าแหล่งที่มาชัดเจนและตรวจสอบได้",
+      "scale": "0-1",
+      "value": 0.9
+    },
+    "reproducibility_score": {
+      "description": "คะแนนความสามารถในการทำซ้ำขั้นตอนตาม procedure และ stepbystep ที่ให้ไว้",
+      "interpretation": "ค่าสูงใกล้ 1 แสดงว่าผู้อื่นสามารถทำซ้ำผลลัพธ์ได้ตามคำแนะนำ",
+      "scale": "0-1",
+      "value": 0.94
+    }
+  },
+  "evidence": [
+    {
+      "collectedat": "2026-03-23T14:03:00Z",
+      "id": "evidence-001",
+      "notes": "ตัวอย่าง input ที่ส่งมาเพื่อทดสอบการตรวจสอบ: หัวข้อสั้นและพารามิเตอร์ inline ถูกสกัดและแมปกับ defaults",
+      "relevance": "high",
+      "source": "user-provided input (transient)",
+      "sourceuri": "https://example.com/validation-guidance",
+      "type": "documentation",
+      "verifier": "AI Validation Agent"
+    }
+  ],
+  "example_checks": [
+    {
+      "actions": "ตรวจสอบว่ามี topic หรือ params ที่จำเป็นหรือไม่; ตรวจสอบรูปแบบวันที่และ URI; ตรวจสอบ pattern ของ secrets",
+      "expected_outcome": "พบ topic และ params ที่จำเป็นหรือคืนค่า insufficient data หากขาด",
+      "scenario": "input validation basic"
+    }
+  ],
+  "final_recommendation": {
+    "detailed": "ใช้ prompt นี้เป็นตัวตรวจสอบเบื้องต้นสำหรับทุก input: 1) ตรวจสอบ presence ของ topic และ params ที่จำเป็น 2) รัน safety classifier สำหรับหมวดเสี่ยง (medical/legal/financial) และคืนค่า insufficient data พร้อมคำแนะนำให้ปรึกษาผู้เชี่ยวชาญเมื่อพบ 3) สแกนหา patterns ของ secrets และแทนที่ด้วย REDACTEDSECRETPLACEHOLDER พร้อมบันทึกตำแหน่งใน reasoningtrace 4) ตรวจสอบรูปแบบวันที่ (ISO8601), URI (https://), และ id/stepid ตาม regex 5) สร้าง JSON ที่เติม defaults หากข้อมูลไม่ครบแต่ไม่ใช่ฟิลด์ที่จำเป็นตาม schema 6) รันอย่างน้อย 3 checks ใน validation.checksrun ก่อนคืนผลลัพธ์ 7) ตั้ง trustscore เริ่มต้นที่ 0.95 และปรับตามผลการตรวจสอบเชิงคุณภาพ",
+    "short": "ใช้ชุดการตรวจสอบแบบเป็นขั้นตอน: safety scan, secret redaction, format validation, schema conformance"
+  },
+  "metadata": {
+    "author": "AI Validation Agent",
+    "executivesummary": "Template สำหรับ validation pipeline; ค่าเริ่มต้น, regex, secret redaction, trustscore rules ถูกจัดเตรียมและตรวจสอบให้สอดคล้องกับ schema",
+    "language": "th",
+    "schemaversion": "1.0.0",
+    "title": "Input validation for prompt ตรวจสอบ input",
+    "validatedat": "2026-03-23T14:05:00Z"
+  },
+  "procedure": {
+    "assumptions": [
+      "ผู้ตรวจสอบมีสิทธิ์เข้าถึง metadata และ evidence ที่เกี่ยวข้อง",
+      "input ถูกส่งในรูปแบบ JSON ที่ parse ได้"
+    ],
+    "goal": "ยืนยันความถูกต้องของ input, redaction ของ secrets, และเตรียมข้อมูลสำหรับการประมวลผลต่อ",
+    "limitationsandexpectations": [
+      "ไม่สามารถแก้ไขข้อมูลที่เป็นความลับโดยไม่ได้รับอนุญาต",
+      "การประเมินเชิงคุณภาพอาจต้องการผู้เชี่ยวชาญในโดเมน"
+    ],
+    "practical_tips": [
+      "รัน validation ในสภาพแวดล้อมที่แยกจาก production เมื่อทำ redaction",
+      "เก็บ log ของตำแหน่งที่ redacted ใน reasoningtrace"
+    ],
+    "recommendedtoolsandmethods": [
+      "jsonschema (draft-07) validator",
+      "regex-based secret scanner",
+      "ISO8601 date parser"
+    ],
+    "safety_considerations": [
+      "ห้ามบันทึก secrets แบบ plaintext",
+      "ห้ามส่งข้อมูลที่ redacted แล้วออกนอกระบบที่ปลอดภัย"
+    ],
+    "stepbystep": [
+      {
+        "details": "ตรวจสอบ presence ของ topic และ params ที่จำเป็น",
+        "step": 1,
+        "title": "ตรวจสอบฟิลด์จำเป็น"
+      },
+      {
+        "details": "รัน safety classifier และทำ flag หากพบหมวดเสี่ยง",
+        "step": 2,
+        "title": "รัน safety classifier"
+      },
+      {
+        "details": "สแกนหา secrets และแทนที่ด้วย REDACTEDSECRETPLACEHOLDER",
+        "step": 3,
+        "title": "secret redaction"
+      },
+      {
+        "details": "ตรวจสอบรูปแบบวันที่ (ISO8601) และ URI (https://)",
+        "step": 4,
+        "title": "format validation"
+      },
+      {
+        "details": "เติม defaults สำหรับฟิลด์ที่ไม่จำเป็นแต่ขาดหาย",
+        "step": 5,
+        "title": "defaults injection"
+      },
+      {
+        "details": "รันชุด validation checks อย่างน้อย 3 รายการและบันทึกผล",
+        "step": 6,
+        "title": "run validation checks"
+      }
+    ]
+  },
+  "reasoningtrace": [
+    {
+      "description": "parsed input headers and params",
+      "inputs": [
+        "raw_payload"
+      ],
+      "operation": "parse",
+      "output": "found required topic and params",
+      "stepid": "step-1",
+      "timestamp": "2026-03-23T14:00:00Z"
+    },
+    {
+      "description": "safety classification",
+      "inputs": [
+        "parsed_payload"
+      ],
+      "operation": "classify",
+      "output": "no high-risk categories detected",
+      "stepid": "step-2",
+      "timestamp": "2026-03-23T14:01:00Z"
+    },
+    {
+      "description": "secret pattern scan",
+      "inputs": [
+        "parsed_payload"
+      ],
+      "operation": "scan",
+      "output": "no secrets found",
+      "stepid": "step-3",
+      "timestamp": "2026-03-23T14:02:00Z"
+    },
+    {
+      "description": "format validation",
+      "inputs": [
+        "parsed_payload"
+      ],
+      "operation": "validate",
+      "output": "dates and URIs conform to expected patterns",
+      "stepid": "step-4",
+      "timestamp": "2026-03-23T14:03:00Z"
+    },
+    {
+      "description": "defaults injection",
+      "inputs": [
+        "parsed_payload"
+      ],
+      "operation": "inject",
+      "output": "injected defaults for optional fields",
+      "stepid": "step-5",
+      "timestamp": "2026-03-23T14:04:00Z"
+    },
+    {
+      "description": "validation checks run",
+      "inputs": [
+        "validated_payload"
+      ],
+      "operation": "run_checks",
+      "output": "3 checks passed; 0 warnings; trustscore adjusted",
+      "stepid": "step-6",
+      "timestamp": "2026-03-23T14:05:00Z"
+    },
+    {
+      "description": "validated via API",
+      "inputs": [
+        "payload"
+      ],
+      "operation": "jsonschema+trust",
+      "output": "trust=0.935",
+      "stepid": "step-7",
+      "timestamp": "2026-03-23T23:49:57.865610+00:00"
+    },
+    {
+      "description": "validated via API",
+      "inputs": [
+        "payload"
+      ],
+      "operation": "jsonschema+trust",
+      "output": "trust=0.935",
+      "stepid": "step-8",
+      "timestamp": "2026-03-23T23:55:19.650853+00:00"
+    },
+    {
+      "description": "validated via API",
+      "inputs": [
+        "payload"
+      ],
+      "operation": "jsonschema+trust",
+      "output": "trust=0.935",
+      "stepid": "step-9",
+      "timestamp": "2026-03-24T00:02:01.496767+00:00"
+    },
+    {
+      "description": "validated via API",
+      "inputs": [
+        "payload"
+      ],
+      "operation": "jsonschema+trust",
+      "output": "trust=0.935",
+      "stepid": "step-10",
+      "timestamp": "2026-03-24T00:06:30.461530+00:00"
+    },
+    {
+      "description": "validated via API",
+      "inputs": [
+        "payload"
+      ],
+      "operation": "jsonschema+trust",
+      "output": "trust=0.935",
+      "stepid": "step-11",
+      "timestamp": "2026-03-24T00:10:54.900181+00:00"
+    },
+    {
+      "description": "validated via API",
+      "inputs": [
+        "payload"
+      ],
+      "operation": "jsonschema+trust",
+      "output": "trust=0.935",
+      "stepid": "step-12",
+      "timestamp": "2026-03-24T00:15:30.175533+00:00"
+    },
+    {
+      "description": "validated via API",
+      "inputs": [
+        "payload"
+      ],
+      "operation": "jsonschema+trust",
+      "output": "trust=0.935",
+      "stepid": "step-13",
+      "timestamp": "2026-03-24T00:18:49.676132+00:00"
+    }
+  ],
+  "rulesandconstraints": {
+    "donotguess": true,
+    "explainstructuralreasoning": true,
+    "explicitlimitationswheninsufficientdata": true,
+    "nohallucination": true,
+    "requireevidence": true,
+    "traceabilityrequired": true
+  },
+  "trustscore": 0.935,
+  "validation": {
+    "checksrun": [
+      {
+        "checkname": "schema conformance",
+        "durationms": 120,
+        "notes": "All required fields present and types match schema",
+        "status": "pass"
+      },
+      {
+        "checkname": "format validation",
+        "durationms": 85,
+        "notes": "Dates and URIs validated",
+        "status": "pass"
+      },
+      {
+        "checkname": "safety scan",
+        "durationms": 200,
+        "notes": "No high-risk categories detected",
+        "status": "pass"
+      }
+    ],
+    "collectedat": "2026-03-23T14:06:00Z",
+    "passed": true,
+    "summary": "All required checks passed; ready for downstream processing",
+    "validator": "AI Validation Agent"
+  }
+}

@@ -1,0 +1,252 @@
+2026-03-23 23:52:19,843 INFO starting web mode=basic port=8080
+2026-03-23 23:52:23,130 INFO signal 2 received, shutting down
+2026-03-24 01:25:51,559 INFO starting web mode=basic port=8080
+2026-03-24 01:26:13,407 WARNING validation failed ip=127.0.0.1 err=[root] 'metadata' is a required property
+2026-03-24 01:26:29,272 INFO signal 2 received, shutting down
+2026-03-24 01:28:42,693 INFO starting web mode=basic port=8080
+2026-03-24 01:28:49,115 WARNING validation failed ip=127.0.0.1 err=[root] Additional properties are not allowed ('language', 'prompt_version', 'readytorun', 'usageinstructions' were unexpected)
+2026-03-24 01:28:58,250 INFO signal 2 received, shutting down
+2026-03-24 01:32:25,676 INFO starting web mode=basic port=8080
+2026-03-24 01:32:40,928 WARNING validation failed ip=127.0.0.1 err=[root] 'checksandmetrics' is a required property
+2026-03-24 01:32:47,357 INFO signal 2 received, shutting down
+2026-03-24 01:33:59,895 INFO starting web mode=basic port=8080
+2026-03-24 01:34:14,674 WARNING validation failed ip=127.0.0.1 err=[root] 'example_checks' is a required property
+2026-03-24 01:34:20,425 INFO signal 2 received, shutting down
+2026-03-24 01:36:52,004 INFO starting web mode=basic port=8080
+2026-03-24 01:37:05,252 WARNING validation failed ip=127.0.0.1 err=[root] 'final_recommendation' is a required property
+2026-03-24 01:37:13,123 INFO signal 2 received, shutting down
+2026-03-24 01:38:28,819 INFO starting web mode=basic port=8080
+2026-03-24 01:38:42,810 WARNING validation failed ip=127.0.0.1 err=[root] 'procedure' is a required property
+2026-03-24 01:38:50,121 INFO signal 2 received, shutting down
+2026-03-24 01:39:58,715 INFO starting web mode=basic port=8080
+2026-03-24 01:40:12,171 WARNING validation failed ip=127.0.0.1 err=[root] 'procedure' is a required property
+2026-03-24 01:40:22,589 INFO signal 2 received, shutting down
+2026-03-24 01:41:47,480 INFO starting web mode=basic port=8080
+2026-03-24 01:41:57,233 WARNING validation failed ip=127.0.0.1 err=[root] 'procedure' is a required property
+2026-03-24 01:42:03,104 INFO signal 2 received, shutting down
+2026-03-24 01:45:50,166 INFO starting web mode=basic port=8080
+2026-03-24 01:45:58,995 WARNING validation failed ip=127.0.0.1 err=[procedure -> stepbystep -> 0] Additional properties are not allowed ('stepid' was unexpected)
+2026-03-24 01:46:20,972 INFO signal 2 received, shutting down
+2026-03-24 01:48:21,018 INFO starting web mode=basic port=8080
+2026-03-24 01:48:43,473 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 01:50:09,521 INFO signal 2 received, shutting down
+2026-03-24 01:58:39,010 INFO starting web mode=basic port=8080
+2026-03-24 01:58:47,330 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 01:59:09,280 INFO signal 2 received, shutting down
+2026-03-24 02:01:41,188 INFO starting web mode=basic port=8080
+2026-03-24 02:01:50,478 WARNING validation failed ip=127.0.0.1 err=[procedure -> stepbystep -> 0] 'step' is a required property
+2026-03-24 02:01:59,992 INFO signal 2 received, shutting down
+2026-03-24 02:03:02,487 INFO starting web mode=basic port=8080
+2026-03-24 02:03:13,021 WARNING validation failed ip=127.0.0.1 err=[procedure -> stepbystep -> 0] 'step' is a required property
+2026-03-24 02:03:20,680 INFO signal 2 received, shutting down
+2026-03-24 02:04:47,835 INFO starting web mode=basic port=8080
+2026-03-24 02:04:57,269 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 02:05:25,176 INFO signal 2 received, shutting down
+2026-03-24 02:09:12,527 INFO starting web mode=basic port=8080
+2026-03-24 02:09:20,511 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 02:13:06,562 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 02:15:12,985 WARNING validation failed ip=127.0.0.1 err=[root] 'rulesandconstraints' is a required property
+2026-03-24 02:17:46,210 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 02:18:22,220 INFO signal 2 received, shutting down
+2026-03-24 02:20:20,892 INFO starting web mode=basic port=8080
+2026-03-24 02:20:30,673 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 02:20:43,419 INFO signal 2 received, shutting down
+2026-03-24 02:23:40,879 INFO starting web mode=basic port=8080
+2026-03-24 02:23:52,786 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 02:24:12,677 INFO signal 2 received, shutting down
+2026-03-24 02:27:17,209 INFO starting web mode=basic port=8080
+2026-03-24 02:27:27,522 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 02:27:47,314 INFO signal 2 received, shutting down
+2026-03-24 02:30:46,405 INFO starting web mode=basic port=8080
+2026-03-24 02:30:58,034 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 02:31:13,133 INFO signal 2 received, shutting down
+2026-03-24 02:37:49,531 INFO starting web mode=basic port=8080
+2026-03-24 02:37:59,401 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 02:38:12,126 INFO signal 2 received, shutting down
+2026-03-24 02:52:45,803 INFO starting web mode=basic port=8080
+2026-03-24 02:52:53,019 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 02:53:00,724 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 02:53:42,979 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 02:54:30,293 INFO signal 2 received, shutting down
+2026-03-24 02:57:08,695 INFO starting web mode=basic port=8080
+2026-03-24 02:57:32,788 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 02:57:33,870 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 02:57:49,782 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 02:57:59,919 INFO signal 2 received, shutting down
+2026-03-24 03:01:37,036 INFO starting web mode=basic port=8080
+2026-03-24 03:01:50,682 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 03:03:13,029 INFO signal 2 received, shutting down
+2026-03-24 03:13:32,926 INFO starting web mode=basic port=8080
+2026-03-24 03:13:45,055 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 03:14:04,537 INFO signal 2 received, shutting down
+2026-03-24 03:15:07,035 INFO starting web mode=basic port=8080
+2026-03-24 03:15:21,949 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 03:15:46,863 INFO signal 2 received, shutting down
+2026-03-24 03:19:47,118 INFO starting web mode=basic port=8080
+2026-03-24 03:19:56,256 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 03:20:41,138 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 03:22:30,383 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 03:23:05,124 INFO signal 2 received, shutting down
+2026-03-24 03:26:59,341 INFO starting web mode=basic port=8080
+2026-03-24 03:27:06,502 INFO validation ok ip=127.0.0.1 trust=0.912
+2026-03-24 03:27:45,737 INFO signal 2 received, shutting down
+2026-03-24 03:28:10,250 INFO starting web mode=basic port=8080
+2026-03-24 03:28:16,771 WARNING validation failed ip=127.0.0.1 err=[reasoningtrace -> 2 -> stepid] 'STEP-3' does not match '^step-\\d{1,6}$'
+2026-03-24 03:28:44,104 INFO signal 2 received, shutting down
+2026-03-24 03:31:19,846 INFO starting web mode=basic port=8080
+2026-03-24 03:31:30,573 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 03:32:32,057 INFO signal 2 received, shutting down
+2026-03-24 03:35:32,002 INFO starting web mode=basic port=8080
+2026-03-24 03:35:46,941 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 03:36:12,112 INFO signal 2 received, shutting down
+2026-03-24 03:38:40,494 INFO starting web mode=basic port=8080
+2026-03-24 03:38:54,319 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 03:39:17,194 INFO signal 2 received, shutting down
+2026-03-24 03:42:19,872 INFO starting web mode=basic port=8080
+2026-03-24 03:42:25,427 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 03:43:17,861 INFO signal 2 received, shutting down
+2026-03-24 03:45:12,586 INFO starting web mode=basic port=8080
+2026-03-24 03:45:38,239 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 03:45:52,479 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 03:46:45,204 WARNING validation failed ip=127.0.0.1 err=[reasoningtrace -> 5 -> stepid] 'STEP-6' does not match '^step-\\d{1,6}$'
+2026-03-24 03:47:42,543 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 03:48:40,483 INFO signal 2 received, shutting down
+2026-03-24 03:51:27,389 INFO starting web mode=basic port=8080
+2026-03-24 03:51:40,209 INFO validation ok ip=127.0.0.1 trust=0.9
+2026-03-24 03:52:11,401 INFO signal 2 received, shutting down
+2026-03-24 03:52:53,452 INFO starting web mode=basic port=8080
+2026-03-24 03:53:15,941 INFO signal 2 received, shutting down
+2026-03-24 03:53:46,659 INFO starting web mode=basic port=8080
+2026-03-24 03:54:09,273 INFO signal 2 received, shutting down
+2026-03-24 03:54:50,461 INFO starting web mode=basic port=8080
+2026-03-24 03:55:02,620 INFO signal 2 received, shutting down
+2026-03-24 03:56:32,850 INFO starting web mode=basic port=8080
+2026-03-24 04:02:24,043 INFO signal 2 received, shutting down
+2026-03-24 04:02:28,695 INFO starting web mode=basic port=8080
+2026-03-24 04:02:51,545 INFO signal 2 received, shutting down
+2026-03-24 04:03:31,285 INFO starting web mode=basic port=8080
+2026-03-24 04:04:42,945 INFO signal 2 received, shutting down
+2026-03-24 04:23:43,081 INFO starting web mode=basic port=8080
+2026-03-24 04:23:56,928 WARNING validation failed ip=127.0.0.1 err=[root] Additional properties are not allowed ('redactions' was unexpected)
+2026-03-24 04:24:27,480 INFO signal 2 received, shutting down
+2026-03-24 04:25:26,939 INFO starting web mode=basic port=8080
+2026-03-24 04:25:36,458 WARNING validation failed ip=127.0.0.1 err=[checksandmetrics] Additional properties are not allowed ('metrics', 'passed_checks', 'total_checks' were unexpected)
+2026-03-24 04:26:22,095 WARNING validation failed ip=127.0.0.1 err=[checksandmetrics] Additional properties are not allowed ('metrics', 'passed_checks', 'total_checks' were unexpected)
+2026-03-24 04:26:47,119 INFO signal 2 received, shutting down
+2026-03-24 04:27:20,154 INFO starting web mode=basic port=8080
+2026-03-24 04:27:38,140 WARNING validation failed ip=127.0.0.1 err=[root] Additional properties are not allowed ('redactions' was unexpected)
+2026-03-24 04:28:19,094 WARNING validation failed ip=127.0.0.1 err=[root] Additional properties are not allowed ('redactions' was unexpected)
+2026-03-24 04:28:36,769 WARNING validation failed ip=127.0.0.1 err=[final_recommendation] Additional properties are not allowed ('notes', 'status' were unexpected)
+2026-03-24 04:28:49,320 WARNING validation failed ip=127.0.0.1 err=[final_recommendation] Additional properties are not allowed ('notes', 'status' were unexpected)
+2026-03-24 04:29:03,737 INFO signal 2 received, shutting down
+2026-03-24 04:42:37,387 INFO starting web mode=basic port=8080
+2026-03-24 04:42:51,610 WARNING validation failed ip=127.0.0.1 err=[root] Additional properties are not allowed ('redactions' was unexpected)
+2026-03-24 04:43:05,631 INFO signal 2 received, shutting down
+2026-03-24 04:45:07,693 INFO starting web mode=basic port=8080
+2026-03-24 04:45:15,326 WARNING validation failed ip=127.0.0.1 err=[root] Additional properties are not allowed ('redactions' was unexpected)
+2026-03-24 04:45:27,381 INFO signal 2 received, shutting down
+2026-03-24 05:06:24,842 INFO starting web mode=basic port=8080
+2026-03-24 05:06:44,411 WARNING validation failed ip=127.0.0.1 err=[root] Additional properties are not allowed ('redactions' was unexpected)
+2026-03-24 05:06:54,416 INFO signal 2 received, shutting down
+2026-03-24 05:16:35,295 INFO starting web mode=basic port=8080
+2026-03-24 05:16:40,149 WARNING validation failed ip=127.0.0.1 err=[root] Additional properties are not allowed ('redactions' was unexpected)
+2026-03-24 05:17:04,062 WARNING validation failed ip=127.0.0.1 err=[root] Additional properties are not allowed ('redactions' was unexpected)
+2026-03-24 05:17:06,680 WARNING validation failed ip=127.0.0.1 err=[root] Additional properties are not allowed ('redactions' was unexpected)
+2026-03-24 05:17:13,704 INFO signal 2 received, shutting down
+2026-03-24 05:26:58,809 INFO starting web mode=basic port=8080
+2026-03-24 05:27:08,876 INFO validation ok ip=127.0.0.1 trust=0.867
+2026-03-24 05:27:37,482 INFO signal 2 received, shutting down
+2026-03-24 05:34:25,975 INFO starting web mode=basic port=8080
+2026-03-24 05:34:33,262 WARNING validation failed ip=127.0.0.1 err=[reasoningtrace -> 3 -> stepid] 'STEP-4' does not match '^step-\\d{1,6}$'
+2026-03-24 05:34:57,060 INFO signal 2 received, shutting down
+2026-03-24 05:40:16,546 INFO starting web mode=basic port=8080
+2026-03-24 05:40:23,032 INFO validation ok ip=127.0.0.1 trust=0.867
+2026-03-24 05:40:40,811 INFO signal 2 received, shutting down
+2026-03-24 05:42:47,677 INFO starting web mode=basic port=8080
+2026-03-24 05:43:11,491 INFO validation ok ip=127.0.0.1 trust=0.867
+2026-03-24 05:44:30,210 INFO signal 2 received, shutting down
+2026-03-24 05:46:34,725 INFO starting web mode=basic port=8080
+2026-03-24 05:46:44,604 INFO validation ok ip=127.0.0.1 trust=0.867
+2026-03-24 05:47:00,709 INFO signal 2 received, shutting down
+2026-03-24 05:52:04,876 INFO starting web mode=basic port=8080
+2026-03-24 05:52:12,924 INFO validation ok ip=127.0.0.1 trust=0.867
+2026-03-24 05:52:25,442 INFO signal 2 received, shutting down
+2026-03-24 05:58:40,310 INFO starting web mode=basic port=8080
+2026-03-24 05:58:48,073 INFO validation ok ip=127.0.0.1 trust=0.867
+2026-03-24 05:59:14,689 INFO validation ok ip=127.0.0.1 trust=0.867
+2026-03-24 05:59:17,660 INFO validation ok ip=127.0.0.1 trust=0.867
+2026-03-24 05:59:55,128 INFO signal 2 received, shutting down
+2026-03-24 06:02:51,717 INFO starting web mode=basic port=8080
+2026-03-24 06:03:20,580 WARNING validation failed ip=127.0.0.1 err=[root] Additional properties are not allowed ('redactions' was unexpected)
+2026-03-24 06:03:36,572 INFO signal 2 received, shutting down
+2026-03-24 06:06:30,783 INFO starting web mode=basic port=8080
+2026-03-24 06:06:41,945 INFO validation ok ip=127.0.0.1 trust=0.867
+2026-03-24 06:06:53,561 INFO signal 2 received, shutting down
+2026-03-24 06:08:16,718 INFO starting web mode=basic port=8080
+2026-03-24 06:08:20,880 WARNING validation failed ip=127.0.0.1 err=[root] Additional properties are not allowed ('redactions' was unexpected)
+2026-03-24 06:08:33,254 INFO signal 2 received, shutting down
+2026-03-24 06:11:48,530 INFO starting web mode=basic port=8080
+2026-03-24 06:12:41,662 INFO validation ok ip=127.0.0.1 trust=0.867
+2026-03-24 06:14:13,668 INFO signal 2 received, shutting down
+2026-03-24 06:25:04,451 INFO starting web mode=basic port=8080
+2026-03-24 06:25:07,707 INFO validation ok ip=127.0.0.1 trust=0.867
+2026-03-24 06:25:26,647 INFO signal 2 received, shutting down
+2026-03-24 06:30:42,497 INFO starting web mode=basic port=8080
+2026-03-24 06:32:15,438 WARNING validation failed ip=127.0.0.1 err=[reasoningtrace -> 5 -> stepid] 'STEP-6' does not match '^step-\\d{1,6}$'
+2026-03-24 06:32:33,781 WARNING validation failed ip=127.0.0.1 err=[reasoningtrace -> 5 -> stepid] 'STEP-6' does not match '^step-\\d{1,6}$'
+2026-03-24 06:33:25,859 WARNING validation failed ip=127.0.0.1 err=[reasoningtrace -> 5 -> stepid] 'STEP-6' does not match '^step-\\d{1,6}$'
+2026-03-24 06:33:59,394 WARNING validation failed ip=127.0.0.1 err=[reasoningtrace -> 5 -> stepid] 'STEP-6' does not match '^step-\\d{1,6}$'
+2026-03-24 06:34:11,774 INFO signal 2 received, shutting down
+2026-03-24 06:36:30,266 INFO starting web mode=basic port=8080
+2026-03-24 06:36:54,633 WARNING validation failed ip=127.0.0.1 err=[rulesandconstraints] [{'id': 'rule-001', 'description': 'ห้ามเก็บหรือส่งต่อ secrets; ต้อง redaction ก่อนบันทึก'}, {'id': 'rule-002', 'description': 'id และ stepid ต้องเป็นไปตาม regex ที่กำหนด'}] is not of type 'object'
+2026-03-24 06:37:52,076 INFO signal 2 received, shutting down
+2026-03-24 06:41:59,009 INFO starting web mode=basic port=8080
+2026-03-24 06:42:58,878 INFO signal 2 received, shutting down
+2026-03-24 06:43:25,452 INFO starting web mode=basic port=8080
+2026-03-24 06:43:50,406 INFO signal 2 received, shutting down
+2026-03-24 06:46:32,422 INFO starting web mode=basic port=8080
+2026-03-24 06:48:15,789 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 06:49:10,946 WARNING validation failed ip=127.0.0.1 err=[reasoningtrace -> 6 -> stepid] 'STEP-7' does not match '^step-\\d{1,6}$'
+2026-03-24 06:49:57,865 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 06:51:40,585 INFO signal 2 received, shutting down
+2026-03-24 06:55:09,747 INFO starting web mode=basic port=8080
+2026-03-24 06:55:19,651 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 06:55:35,886 INFO signal 2 received, shutting down
+2026-03-24 06:57:22,042 INFO starting web mode=basic port=8080
+2026-03-24 06:58:22,941 INFO signal 2 received, shutting down
+2026-03-24 06:58:27,264 INFO starting web mode=basic port=8080
+2026-03-24 07:00:21,727 INFO signal 2 received, shutting down
+2026-03-24 07:01:38,441 INFO starting web mode=basic port=8080
+2026-03-24 07:02:01,497 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 07:03:02,743 INFO signal 2 received, shutting down
+2026-03-24 07:05:24,733 INFO starting web mode=basic port=8080
+2026-03-24 07:05:43,615 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 07:05:45,406 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 07:05:48,816 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 07:05:55,332 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 07:05:56,293 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 07:06:27,446 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 07:06:30,461 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 07:06:38,658 INFO signal 2 received, shutting down
+2026-03-24 07:10:18,811 INFO starting web mode=basic port=8080
+2026-03-24 07:10:49,030 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 07:10:50,345 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 07:10:54,900 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 07:11:02,235 INFO signal 2 received, shutting down
+2026-03-24 07:14:57,605 INFO starting web mode=basic port=8080
+2026-03-24 07:15:16,098 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 07:15:29,347 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 07:15:30,175 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 07:15:41,584 INFO signal 2 received, shutting down
+2026-03-24 07:18:23,570 INFO starting web mode=basic port=8080
+2026-03-24 07:18:45,069 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 07:18:49,676 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 07:18:58,303 INFO signal 2 received, shutting down
+2026-03-24 07:24:24,553 INFO starting web mode=basic port=8080
+2026-03-24 07:24:42,711 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 07:24:43,863 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 07:24:45,146 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 07:24:56,707 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 07:24:57,830 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 07:25:10,169 INFO validation ok ip=127.0.0.1 trust=0.935
+2026-03-24 07:32:26,066 INFO signal 2 received, shutting down

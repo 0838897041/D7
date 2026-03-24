@@ -1,0 +1,54 @@
+{
+  "metadata": {
+    "schemaversion": "2.0",
+    "validatedat": "2025-01-01T00:00:00Z",
+    "author": "local-user",
+    "language": "th",
+    "title": "ตัวอย่าง",
+    "executivesummary": "เอกสารทดสอบระบบ"
+  },
+  "rulesandconstraints": {
+    "nohallucination": true,
+    "requireevidence": true,
+    "explicitlimitationswheninsufficientdata": false,
+    "traceabilityrequired": true,
+    "explainstructuralreasoning": true,
+    "donotguess": true
+  },
+  "evidence": [
+    {
+      "id": "EVID-1",
+      "type": "web",
+      "source": "example",
+      "sourceuri": "https://example.com",
+      "collectedat": "2025-01-01T00:00:00Z",
+      "verifier": "local",
+      "relevance": "high"
+    }
+  ],
+  "reasoningtrace": [
+    {
+      "stepid": "STEP-1",
+      "description": "สร้างตัวอย่าง",
+      "inputs": [
+        "EVID-1"
+      ],
+      "operation": "create",
+      "output": "sample ok",
+      "timestamp": "2025-01-01T00:00:00Z"
+    }
+  ],
+  "validation": {
+    "passed": true,
+    "validator": "local",
+    "checksrun": [
+      {
+        "checkname": "schema-check",
+        "status": "pass",
+        "durationms": 10
+      }
+    ],
+    "collectedat": "2025-01-01T00:00:00Z"
+  },
+  "trustscore": 0.9
+}

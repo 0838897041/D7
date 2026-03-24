@@ -1,0 +1,13 @@
+{
+  "mode": "basic",
+  "web_port": 8080,
+  "health_check_interval": 30,
+  "log_max_bytes": 200000,
+  "log_backup_count": 3,
+  "alert_thresholds": {
+    "errors_per_min": 10
+  },
+  "auth_token": "09b9d32bf4db3c3c986f28e2f914bd4366c46161701ed699b9e39e5be835cf20",
+  "rate_limit_requests": 60,
+  "rate_limit_window_sec": 60
+}

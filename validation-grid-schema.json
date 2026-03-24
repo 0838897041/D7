@@ -1,0 +1,220 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Validation Grid Schema",
+  "type": "object",
+  "required": [
+    "metadata",
+    "rulesandconstraints",
+    "evidence",
+    "reasoningtrace",
+    "validation",
+    "trustscore"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": [
+        "schemaversion",
+        "validatedat",
+        "author",
+        "language",
+        "title",
+        "executivesummary"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "schemaversion": {
+          "type": "string"
+        },
+        "validatedat": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "author": {
+          "type": "string"
+        },
+        "language": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "executivesummary": {
+          "type": "string"
+        }
+      }
+    },
+    "rulesandconstraints": {
+      "type": "object",
+      "required": [
+        "nohallucination",
+        "requireevidence",
+        "explicitlimitationswheninsufficientdata",
+        "traceabilityrequired",
+        "explainstructuralreasoning",
+        "donotguess"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "nohallucination": {
+          "type": "boolean"
+        },
+        "requireevidence": {
+          "type": "boolean"
+        },
+        "explicitlimitationswheninsufficientdata": {
+          "type": "boolean"
+        },
+        "traceabilityrequired": {
+          "type": "boolean"
+        },
+        "explainstructuralreasoning": {
+          "type": "boolean"
+        },
+        "donotguess": {
+          "type": "boolean"
+        }
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "type",
+          "source",
+          "sourceuri",
+          "collectedat",
+          "verifier",
+          "relevance"
+        ],
+        "additionalProperties": true,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "sourceuri": {
+            "type": "string",
+            "format": "uri"
+          },
+          "collectedat": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "verifier": {
+            "type": "string"
+          },
+          "relevance": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "reasoningtrace": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "stepid",
+          "description",
+          "inputs",
+          "operation",
+          "output",
+          "timestamp"
+        ],
+        "additionalProperties": true,
+        "properties": {
+          "stepid": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "inputs": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "operation": {
+            "type": "string"
+          },
+          "output": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    },
+    "validation": {
+      "type": "object",
+      "required": [
+        "passed",
+        "validator",
+        "checksrun",
+        "collectedat"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "passed": {
+          "type": "boolean"
+        },
+        "validator": {
+          "type": "string"
+        },
+        "checksrun": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "checkname",
+              "status",
+              "durationms"
+            ],
+            "additionalProperties": true,
+            "properties": {
+              "checkname": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "pass",
+                  "fail",
+                  "warn"
+                ]
+              },
+              "durationms": {
+                "type": "number"
+              }
+            }
+          }
+        },
+        "collectedat": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "trustscore": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    }
+  }
+}
